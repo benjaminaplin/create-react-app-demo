@@ -9,18 +9,25 @@ const { Meta } = Card;
 type PaintingListProps = {paintings: string[]}
 
 export const PaintingList = ({paintings}: PaintingListProps) => {
+console.log("🚀 ~ file: paintingList.tsx ~ line 12 ~ PaintingList ~ paintings", paintings)
   return (
-    <>
-      <Title>
-      Paintings
-      </Title>
-        <Card
-          hoverable
-          style={{ width: 240 }}
-          cover={<img alt="example" src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png" />}
-        >
-          <Meta title="Europe Street beat" description="www.instagram.com" />
-        </Card>,
-      </>
+    <div>
+      {paintings.map((painting: string) => {
+        
+        return (
+          <div key={painting}>
+            <Title>
+            {painting}
+            </Title>
+            <Card
+              hoverable
+              style={{ width: 240 }}
+              // cover={<img alt="example" src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png" />}
+            >
+              <Meta title={painting} description={painting} />
+            </Card>
+          </div>
+          )})}
+    </div>
   )
 }
