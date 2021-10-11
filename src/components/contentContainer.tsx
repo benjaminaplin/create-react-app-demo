@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { AxiosResponse } from 'axios'
 import service from '../service'
 type AppContentProps = {}
 
@@ -6,9 +7,9 @@ export const AppContent = ({}: AppContentProps) => {
   const [message, setMessage ] = useState('no message')
   
   useEffect(() => {
-    service.getAbout().then((res: any) => {
-      console.log("🚀 ~ file: contentContainer.tsx ~ line 9 ~ fetch ~ res", res)
-      setMessage(res.data)
+    service.getAbout().then((res: AxiosResponse<{title: string}>) => {
+      console.log("🚀 ~ file: contentContainer.tsx ~ line 9 ~ fetch ~ res.data.title", res.data.title)
+      setMessage(res.data.title)
     }).catch(err => console.error('whoops', err))
   }, [])
 
