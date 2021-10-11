@@ -41,7 +41,10 @@ module.exports = {
       'react-scripts/config/jest/fileTransform.js',
     ),
   },
-  transformIgnorePatterns: ['[/\\\\]node_modules[/\\\\].+\\.(js|jsx)$'],
+  // transformIgnorePatterns: ['[/\\\\]node_modules[/\\\\].+\\.(js|jsx)$'],
+  "transformIgnorePatterns": [
+    "/node_modules/(?!antd|@ant-design|rc-.+?|@babel/runtime).+(js|jsx)$"
+  ],
   resetMocks: true,
   collectCoverageFrom: [
     'src/**/*.js',
