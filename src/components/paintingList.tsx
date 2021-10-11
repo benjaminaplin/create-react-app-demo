@@ -1,13 +1,26 @@
 import React from 'react'
 import { Typography } from 'antd';
 const { Title } = Typography
+import { Card } from 'antd';
 
-type PaintingListProps = {text: string}
+const { Meta } = Card;
 
-export const PaintingList = ({text}: PaintingListProps) => {
+
+type PaintingListProps = {paintings: string[]}
+
+export const PaintingList = ({paintings}: PaintingListProps) => {
   return (
-    <Title>
-      {text}
-    </Title>
+    <>
+      <Title>
+      Paintings
+      </Title>
+        <Card
+          hoverable
+          style={{ width: 240 }}
+          cover={<img alt="example" src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png" />}
+        >
+          <Meta title="Europe Street beat" description="www.instagram.com" />
+        </Card>,
+      </>
   )
 }

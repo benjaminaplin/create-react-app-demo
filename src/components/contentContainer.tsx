@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { AxiosResponse } from 'axios'
+import { PaintingList } from '../components/paintingList'
 import service from '../service'
 type AppContentProps = {}
 
@@ -15,7 +16,7 @@ export const AppContent = ({}: AppContentProps) => {
 
   return (
     <div className='AppContent_container' >
-      {message}
+      < PaintingList paintings={['']}/>
     </div>
   )
 }
